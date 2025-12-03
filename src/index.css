@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #0b182c;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,7 +15,7 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #ffffff;
   text-decoration: inherit;
 }
 a:hover {
@@ -24,11 +24,12 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  display: grid;          /* make body a grid container */
+  place-items: center;    /* centers content horizontally & vertically */
   min-width: 320px;
   min-height: 100vh;
 }
+
 
 h1 {
   font-size: 3.2em;
@@ -47,7 +48,7 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #1a1b35;
 }
 button:focus,
 button:focus-visible {
@@ -66,3 +67,17 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+
+
+table {
+  border-collapse: collapse; /* ensures clean borders */
+  width: 100%;               /* full width table */
+}
+
+th, td {
+  border: 1px solid #ccc;    /* light border between cells */
+  padding: 8px 12px;         /* space inside each cell */
+  text-align: center;        /* center values */
+}
+

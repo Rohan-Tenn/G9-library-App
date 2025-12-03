@@ -1,11 +1,11 @@
-import './App.css'
-import MainRouter from './MainRouter.jsx'
+import { BrowserRouter } from "react-router-dom";
+import MainRouter from "./MainRouter";
 
 function App() {
   return (
-    <MainRouter/>
-  )
- 
+      <MainRouter />
+    
+  );
 }
 
-export default App
+export default App;

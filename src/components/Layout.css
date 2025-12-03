@@ -4,7 +4,7 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: black;
+  background-color: #0b182c;
   padding: 5px 0;
   text-align: center;
   display: flex;
@@ -14,7 +14,7 @@ nav {
 }
 
 h1{
-  color: black;
+  color: rgb(255, 255, 255);
   padding-top: 150px;
 
 }
@@ -27,9 +27,6 @@ li{
 
 
 
-.navspace {
-  padding-top: 30px;
-}
 
 
 

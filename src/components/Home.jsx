@@ -1,28 +1,37 @@
-import {Link} from 'react-router-dom';
+import React, { useState, useEffect } from "react";
 import './Home.css';
-export default function Home(){
-    return(
-        <>
-        <h1>Welcome to My Portfolio</h1>
 
-        <br />
-        
-        <div>
-            <p>
-                My mission is to provide only the best software and do it quickly and efficiently.
-            </p>
-        </div>
+const Home = () => {
+  const [bookCount, setBookCount] = useState(0);
+  const [patronCount, setPatronCount] = useState(0);
+  const [loanCount, setLoanCount] = useState(0);
 
-        <br />
-        <br />
+  useEffect(() => {
+    fetch("http://localhost:5000/api/books")
+      .then(res => res.json())
+      .then(data => setBookCount(data.length))
+      .catch(err => console.error("Error fetching books:", err));
 
-        <div>
-             <Link to="/about"><button>About Me</button></Link> <Link to="/projects"><button>My Projects</button></Link> {/* 2 buttons to about me and projects */}
-        </div>
+    fetch("http://localhost:5000/api/patrons")
+      .then(res => res.json())
+      .then(data => setPatronCount(data.length))
+      .catch(err => console.error("Error fetching patrons:", err));
 
+    fetch("http://localhost:5000/api/loans/count")
+      .then(res => res.json())
+      .then(data => setLoanCount(data.borrowedBooks))
+      .catch(err => console.error("Error fetching loans:", err));
+  }, []);
 
+  return (
+    <div className="navspace">
+      <h1>Dashboard</h1>
+      <br />
+      <p className="dashboard">Books Available: {bookCount}</p>
+      <p className="dashboard">Patrons: {patronCount}</p>
+      <p className="dashboard">Borrowed Books: {loanCount}</p>
+    </div>
+  );
+};
 
-
-        </>
-    )
-}
+export default Home;
