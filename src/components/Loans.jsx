@@ -125,7 +125,7 @@ const Loans = () => {
 
               <td>{loan.RETURN_DATE ? new Date(loan.RETURN_DATE).toLocaleDateString() : "Not Returned"}</td>
 
-              <td>{!loan.RETURN_DATE && (<button onClick={() => returnBook(loan.LOAN_ID)}>Return</button>)}</td>
+              <td>{!loan.RETURN_DATE && (<button onClick={() => returnBook(loan.BOOK_ID)}>Return</button>)}</td>
 
             </tr>
           ))}
