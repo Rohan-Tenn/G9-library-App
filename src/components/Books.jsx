@@ -34,8 +34,10 @@ const Books = () => {
     e.preventDefault();
 
     const url = isEditing
-      ? `http://localhost:5000/api/books/${bookId}` // PUT when editing note
-      : "http://localhost:5000/api/books";          // POST when adding note
+    // PUT when editing the book - hardcoded url due to proxy issues
+      ? `http://localhost:5000/api/books/${bookId}` 
+      // POST when adding the book
+      : "http://localhost:5000/api/books";          
 
     const method = isEditing ? "PUT" : "POST";
 
@@ -73,6 +75,9 @@ const Books = () => {
     }
   };
 
+
+  // edit book function
+
     const editBook = (book) => {
       setBookId(book.BOOK_ID);
       setTitle(book.TITLE);
@@ -84,7 +89,7 @@ const Books = () => {
 };
 
 
-
+// delete book function
   const deleteBook = async (id) => {
     try {
       const res = await fetch(`http://localhost:5000/api/books/${id}`, {
@@ -98,6 +103,7 @@ const Books = () => {
     }
   };
 
+  // search by genre or author only
   const handleSearch = () => {
     const query = search.toLowerCase();
     const filtered = books.filter(
@@ -110,6 +116,8 @@ const Books = () => {
   };
 
   return (
+
+
     <div><br /><br /><br /><br /><br /><br /><br />
       <h2>Search Books</h2>
       <input

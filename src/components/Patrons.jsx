@@ -33,8 +33,10 @@ const Patrons = () => {
     e.preventDefault();
 
     const url = isEditing
-      ? `http://localhost:5000/api/patrons/${patronId}` // PUT when editing note
-      : "http://localhost:5000/api/patrons";            // POST when adding note
+    // PUT when editing patron
+      ? `http://localhost:5000/api/patrons/${patronId}` 
+      // POST when adding patron
+      : "http://localhost:5000/api/patrons";            
 
     const method = isEditing ? "PUT" : "POST";
 
@@ -78,6 +80,13 @@ const Patrons = () => {
     setMembershipNo(patron.MEMBERSHIP_NO);
     setIsEditing(true);
   };
+
+
+
+
+
+
+
 
   const deletePatron = async (id) => {
     try {

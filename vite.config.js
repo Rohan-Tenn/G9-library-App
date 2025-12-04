@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   preview: {
     allowedHosts: [
-      'react-portfolio-a1-rt.onrender.com'
+      'react-portfolio-a1-rt.onrender.com' // leftover from previous project This one was built off a skeleton then modified  - to be removed
     ]
   }
 })

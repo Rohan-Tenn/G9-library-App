@@ -6,23 +6,34 @@ const Home = () => {
   const [patronCount, setPatronCount] = useState(0);
   const [loanCount, setLoanCount] = useState(0);
 
+
+  // Counter for Books
   useEffect(() => {
     fetch("http://localhost:5000/api/books")
       .then(res => res.json())
       .then(data => setBookCount(data.length))
       .catch(err => console.error("Error fetching books:", err));
 
+
+      // Counter for Patrons
     fetch("http://localhost:5000/api/patrons")
       .then(res => res.json())
       .then(data => setPatronCount(data.length))
       .catch(err => console.error("Error fetching patrons:", err));
 
+
+
+
+      // Counter for Loans/Borrowed Books
     fetch("http://localhost:5000/api/loans/count")
       .then(res => res.json())
       .then(data => setLoanCount(data.borrowedBooks))
       .catch(err => console.error("Error fetching loans:", err));
   }, []);
 
+
+
+// Dashboard for the Library App
   return (
     <div className="navspace">
       <h1>Dashboard</h1>
