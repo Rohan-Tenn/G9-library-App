@@ -1,5 +1,5 @@
 input[readonly] {
-  background-color: #302f2f; /* light gray background */
-  color: #5a5656;              /* darker text */
-  cursor: not-allowed;      /* shows "blocked" cursor */
+  background-color: #302f2f; 
+  color: #5a5656;              
+  cursor: not-allowed;      /* Blocks mouse cursor*/
 }

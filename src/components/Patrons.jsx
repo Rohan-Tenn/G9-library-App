@@ -33,8 +33,8 @@ const Patrons = () => {
     e.preventDefault();
 
     const url = isEditing
-      ? `http://localhost:5000/api/patrons/${patronId}` // PUT when editing
-      : "http://localhost:5000/api/patrons";            // POST when adding
+      ? `http://localhost:5000/api/patrons/${patronId}` // PUT when editing note
+      : "http://localhost:5000/api/patrons";            // POST when adding note
 
     const method = isEditing ? "PUT" : "POST";
 
@@ -57,7 +57,6 @@ const Patrons = () => {
       const data = await res.json();
       setMessage(data.message || (isEditing ? "Patron Updated" : "Patron Added"));
 
-      // reset form
       setPatronId("");
       setName("");
       setAddress("");

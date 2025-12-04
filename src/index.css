@@ -24,8 +24,8 @@ a:hover {
 
 body {
   margin: 0;
-  display: grid;          /* make body a grid container */
-  place-items: center;    /* centers content horizontally & vertically */
+  display: grid;          
+  place-items: center;    
   min-width: 320px;
   min-height: 100vh;
 }
@@ -59,13 +59,13 @@ button:focus-visible {
 
 
 table {
-  border-collapse: collapse; /* ensures clean borders */
-  width: 100%;               /* full width table */
+  border-collapse: collapse; 
+  width: 100%;               
 }
 
 th, td {
-  border: 1px solid #ccc;    /* light border between cells */
-  padding: 8px 12px;         /* space inside each cell */
-  text-align: center;        /* center values */
+  border: 1px solid #ccc;    
+  padding: 8px 12px;         
+  text-align: center;       
 }
 

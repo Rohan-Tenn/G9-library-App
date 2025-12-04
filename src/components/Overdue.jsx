@@ -12,6 +12,7 @@ export default function OverdueLoans() {
     fetchOverdueLoans();
   }, []);
 
+
   return (
     <div>
       <h2>Overdue Books & Fines:</h2>
@@ -24,7 +25,6 @@ export default function OverdueLoans() {
             <th>Due Date</th>
             <th>Days Overdue</th>
             <th>Fine</th>
-            
           </tr>
         </thead>
         <tbody>
@@ -33,7 +33,7 @@ export default function OverdueLoans() {
               <td>{loan.LOAN_ID}</td>
               <td>{loan.PATRON_ID}</td>
               <td>{loan.BOOK_ID}</td>
-              <td>{new Date(loan.DUE_DATE).toLocaleDateString()}</td>
+              <td>{new Date(loan.DUE_DATE).toLocaleDateString()}</td> 
               <td>{loan.DAYS_OVERDUE?.toFixed(0)}</td>
               <td>${loan.OVERDUE_FEE?.toFixed(2)}</td>
             </tr>

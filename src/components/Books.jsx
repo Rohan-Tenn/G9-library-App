@@ -34,8 +34,8 @@ const Books = () => {
     e.preventDefault();
 
     const url = isEditing
-      ? `http://localhost:5000/api/books/${bookId}` // PUT when editing
-      : "http://localhost:5000/api/books";          // POST when adding
+      ? `http://localhost:5000/api/books/${bookId}` // PUT when editing note
+      : "http://localhost:5000/api/books";          // POST when adding note
 
     const method = isEditing ? "PUT" : "POST";
 
@@ -58,7 +58,7 @@ const Books = () => {
       const data = await res.json();
       setMessage(data.message || (isEditing ? "Book Updated" : "Book Added"));
 
-      // reset form
+   
       setBookId("");
       setTitle("");
       setAuthor("");

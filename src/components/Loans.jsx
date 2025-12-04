@@ -59,7 +59,6 @@ const Loans = () => {
       const data = await res.json();
       setMessage(data.message || "Book loaned successfully");
 
-      // reset form
       setLoanId("");
       setPatronId("");
       setBookId("");
